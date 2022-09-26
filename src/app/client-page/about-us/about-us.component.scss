@@ -1,0 +1,16 @@
+.training{
+    background-image: url("../../../assets/about-us.jpg");
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 180px;
+}
+.training::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}

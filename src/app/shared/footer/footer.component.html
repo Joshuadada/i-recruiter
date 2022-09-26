@@ -1,0 +1,36 @@
+<div class="bg-slate-900 p-20">
+    <div class="flex justify-center items-center mb-6">
+        <input type="email" class="w-60 outline-0 p-1 border border-blue-600 text-sm bg-transparent text-slate-100 rounded-l">
+        <div class="px-3 py-1 border border-blue-600 bg-blue-600 cursor-pointer text-sm text-slate-100 rounded-r">Subscribe</div>
+    </div>
+    <div class="flex justify-center text-slate-100">
+        <div class="cursor-pointer hover:text-slate-200 text-sm" routerLink="/home">Home</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm" routerLink="/about-us">About us</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm">Anti-spam policy</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm">Terms of service</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm">Privacy Policy</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm">Abuse Policy</div>
+        <div class="ml-3 pl-3 cursor-pointer hover:text-slate-200 border-l border-slate-100 text-sm">Cookie Policy</div>
+    </div>
+    <div class="text-center mt-6 text-sm text-slate-200">&copy; {{date.getFullYear()}}, i-recruiter</div>
+    <div class="fixed bottom-4 right-4">
+        <img src="../../../assets/chat.png" class="w-10 cursor-pointer" alt="" title="Send us an email" *ngIf="toggleMailBtn" (click)="toggleMailBtnFn()">
+        <div class="bg-blue-700 shadow rounded relative" *ngIf="toggleMail">
+            <div class="text-2xl font-bold absolute -top-8 right-0 cursor-pointer text-slate-100" (click)="toggleMailFn()">&times;</div>
+            <div class="p-6">
+                <div class="text-2xl font-bold text-slate-100">I-Recruiter</div>
+                <div class="text-slate-100">Send us an email now</div>
+            </div>
+            <form class="bg-white block p-6 rounded">
+                <input type="email" name="email-address" placeholder="Enter your email address" id="" class="block border border-slate-300 w-full mb-3 outline-0 text-sm p-2">
+                <input type="text" name="email-subject" placeholder="Enter your email subject" id="" class="block border border-slate-300 w-full mb-3 outline-0 text-sm p-2">
+                <textarea name="email-message" id="" cols="30" rows="10" placeholder="Type your message and hit Enter" class="block border border-slate-300 w-full resize-none outline-0 text-sm p-2 h-32 overflow-auto"></textarea>
+                <div
+                    class="bg-blue-500 w-[150px] rounded text-white px-3 py-2 text-center font-semibold hover:bg-blue-600 cursor-pointer transition-all duration-200 hover:font-bold mt-3 ml-auto"
+                >
+                    Send
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="grid grid-cols-1 md:grid-cols-2 max-h-screen">
+    <div class="general-auth h-full">
+        <div class="absolute right-[20%] bottom-[15%] z-20 text-white">
+            <div class="text-2xl font-bold">I-Recruiter</div>
+            <div>&copy; {{date.getFullYear()}}.</div>
+        </div>
+    </div>
+    <div class="">
+        <div class="flex items-center justify-between sticky left-0 right-0 top-0 bg-white shadow p-4">
+            <div class="cursor-pointer text-slate-400 hover:text-slate-600"><span>&lt;</span> Home</div>
+            <div class="" *ngIf="login">
+                Don't have an account? <span class="cursor-pointer text-blue-400 hover:text-blue-600" (click)="toggleToRegister()">Register</span>
+            </div>
+            <div class="" *ngIf="register">
+                Already have an account? <span class="cursor-pointer text-blue-400 hover:text-blue-600" (click)="toggleToLogin()">Login</span>
+            </div>
+        </div>
+        <div class="p-10 h-full flex items-center justify-center">
+            <div *ngIf="login">
+                <div class="font-bold text-2xl">IRecruiter {{status}} Login</div>
+                <div class="text-slate-400 text-lg mt-3">Please fill in your login details.</div>
+                <form action="" class="mt-3" [formGroup]="loginForm">
+                    <div>
+                        <div class="font-bold text-lg">Email <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="email" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]" formControlName="email"> <span class="fa fa-eye-slash"></span></div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-bold text-lg">Password <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="password" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]" formControlName="password"></div>
+                    </div>
+                    <div class="mt-5"><input type="button" value="Login" class="outline-none bg-blue-600 hover:bg-blue-700 text-white cursor-pointer rounded p-4 min-w-[400px] w-[60%]"></div>
+                </form>
+            </div>
+            <div *ngIf="register">
+                <div class="font-bold text-2xl">IRecruiter {{status}} Registration</div>
+                <div class="text-slate-400 text-lg mt-3">Please fill in your details to register.</div>
+                <form action="" class="mt-3" [formGroup]="registrationForm">
+                    <div>
+                        <div class="font-bold text-lg">Full Name <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="text" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]" formControlName="fullName"></div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-bold text-lg">Email <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="email" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]" formControlName="email"></div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-bold text-lg">Password <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="password" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]"formControlName="password"></div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-bold text-lg">Confirm Password <span class="text-red-400 font-normal">*</span></div>
+                        <div class="mt-2"><input type="password" class="outline-none border border-black rounded p-4 min-w-[400px] w-[60%]"formControlName="confirmPassword"></div>
+                    </div>
+                    <div class="mt-5"><input type="button" value="Register" class="outline-none bg-blue-600 hover:bg-blue-700 text-white cursor-pointer rounded p-4 min-w-[400px] w-[60%]"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
