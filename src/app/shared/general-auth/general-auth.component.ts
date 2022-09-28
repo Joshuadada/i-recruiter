@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FirebaseService } from 'src/services/firebase.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { ConfirmPasswordValidator } from '../../../services/validators/confirm-password.validator'
 
 @Component({
   selector: 'app-general-auth',
@@ -32,14 +33,14 @@ export class GeneralAuthComponent implements OnInit {
     fullName: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.pattern(`(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}`)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(7)]]
+    confirmPassword: ['', [Validators.required]]
+  }, {
+    validator: ConfirmPasswordValidator
   })
 
   loginForm = this.fb.group({
-    fullName: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, Validators.minLength(7)]],
-    password: ['', [Validators.required, Validators.minLength(7)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(7)]]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
   })
 
 

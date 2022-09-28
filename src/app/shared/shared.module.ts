@@ -7,12 +7,12 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
-    GeneralAuthComponent
+    GeneralAuthComponent,
+
   ],
   imports: [
     CommonModule,
